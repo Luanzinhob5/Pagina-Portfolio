@@ -1,0 +1,68 @@
+# Arquivo .gitignore para um projeto Node.js
+
+# #################### #
+# Dependências e Pacotes #
+# #################### #
+# A pasta mais importante a ser ignorada.
+# Ela é recriada com o comando "npm install".
+/node_modules
+
+# Arquivos de log gerados pelo npm em caso de erro.
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# #################### #
+# Arquivos de Ambiente #
+# #################### #
+# CRÍTICO! Este arquivo contém senhas e chaves de API.
+# NUNCA envie para o repositório.
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+# ################ #
+# Arquivos de Build #
+# ################ #
+# Pasta de saída de builds (caso você use TypeScript, por exemplo)
+/dist
+/build
+
+
+# ############# #
+# Logs da Aplicação #
+# ############# #
+# Ignora qualquer arquivo que termine com .log
+*.log
+
+
+# ################################# #
+# Arquivos de Sistema Operacional #
+# ################################# #
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+
+# ############################ #
+# Arquivos de IDEs e Editores #
+# ############################ #
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains (WebStorm, etc.)
+.idea/
