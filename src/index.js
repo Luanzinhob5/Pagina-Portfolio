@@ -1,5 +1,6 @@
 const express = require('express');
-const connectDB = require('./db/connect.js')
+const connectDB = require('./db/connect')
+require('dotenv').config()
 
 const app = express();
 
@@ -10,6 +11,19 @@ app.get('/', (req, res) => {
     res.json({message: 'O teste inicial e esse'});
 });
 
-app.listen(PORT, () => {
-    console.log(`Esta rodando na porta http${PORT}`);
-});
+
+const startServer = async () => {
+    try {
+        //conexao com a DB - MongoDB
+        await connectDB(MONGO_URI);
+
+        app.listen(PORT, () => {
+        console.log(`Esta rodando na porta ${PORT}`);
+    });
+
+    } catch (error){
+        console.error('Falha ao iniciar o servidor', error);
+    }
+};
+
+startServer();
